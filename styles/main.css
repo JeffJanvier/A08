@@ -148,3 +148,31 @@ blockquote {
 .large {
   font-size: 125%;
 }
+/* ---------- Speaker Page ---------- */
+.speaker {
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.speaker h1 {
+  color: var(--accent-color);
+}
+
+.speaker h2 {
+  color: #000;
+}
+
+.speaker p {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.speaker img {
+  float: right;
+  width: 100%;
+  min-width: 100px;
+  max-width: 250px;
+  margin: 0 0 1rem 1rem;
+  border: 3px double var(--accent-color);
+  border-radius: 10px;
+}
