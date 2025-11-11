@@ -1,178 +1,190 @@
+/* ==============================
+   San Joaquin Valley Town Hall
+   main.css
+   ============================== */
+
+/* ---------- Root and Global Styles ---------- */
 :root {
-  --accent-color: #800000;
+  --primary-color: #333;
+  --accent-color: #6b2d82;
+  --background-color: #fff;
+  --border-color: #ccc;
 }
 
-/* ---------- Reset ---------- */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-/* ---------- General page styles ---------- */
 body {
-  font-family: "Times New Roman", Times, serif;
-  color: #000;
-  background-color: #fff;
-  width: 80%;
-  max-width: 1024px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.4;
+  color: var(--primary-color);
+  background-color: var(--background-color);
   margin: 0 auto;
-  padding: 2rem;
-  line-height: 1.5;
-  font-size: calc(0.9rem + 0.2vw);
-  border: 2px solid var(--accent-color);
-}
-
-/* Reduce spacing slightly */
-h1, h2, h3, p, ul {
-  padding-top: 0.25em;
-  padding-bottom: 0.25em;
-}
-
-ul {
-  margin-left: 2em;
-  list-style-type: disc;
-  padding-left: 1rem;
+  width: 95%;
+  max-width: 960px;
+  border: 1px solid var(--border-color);
 }
 
 /* ---------- Header ---------- */
 header {
-  line-height: 1.2;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid var(--accent-color);
-  background: linear-gradient(30deg, #f6bb73 0%, #fff 30%, #fff 65%, #f6bb73 100%);
+  border-bottom: 2px solid var(--border-color);
+  padding: 1em;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 header img {
-  float: left;
-  width: 100%;
-  min-width: 40px;
-  max-width: 80px;
-  margin: 0.75em 1em;
-  border: 4px double var(--accent-color);
-  border-radius: 10px;
+  height: 80px;
 }
 
 header h2 {
-  font-size: 170%;
+  font-size: 1.75em;
+  color: var(--primary-color);
+  margin-bottom: 0.25em;
 }
 
 header h3 {
-  font-size: 130%;
+  font-size: 1em;
   font-style: italic;
-}
-
-/* ---------- Main content ---------- */
-main {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-aside {
-  flex-basis: 25%;
-  padding-right: 1rem;
-}
-
-section {
-  flex-basis: 70%;
-}
-
-aside h2 {
   color: var(--accent-color);
 }
 
-aside img {
-  display: block;
-  width: 100%;
-  min-width: 40px;
-  max-width: 75px;
-  margin: 0.5rem 0 1rem 0;
-  border: 2px double var(--accent-color);
-  border-radius: 8px;
+.large {
+  font-size: 1.2em;
+  font-weight: bold;
 }
 
-section h1 {
-  border-top: 2px solid var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-  margin-top: 1.5rem;
-  font-size: 1.4rem;
+/* ---------- Main Content ---------- */
+main {
+  padding: 1em;
 }
 
-/* ---------- Featured speaker ---------- */
-.featured {
-  border-top: 2px solid var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-  margin: 1.5rem 0;
-  padding: 1rem 0;
+main h1, main h2 {
+  color: var(--accent-color);
+  margin-bottom: 0.5em;
 }
 
-.featured img {
-  float: right;
-  width: 100%;
-  min-width: 100px;
-  max-width: 250px;
-  margin: 0 0 1rem 1rem;
-  border: 3px double var(--accent-color);
-  border-radius: 10px;
+main p {
+  margin-bottom: 1em;
+}
+
+/* ---------- Lists ---------- */
+ul {
+  list-style-type: square;
+  margin-left: 1.5em;
+  margin-bottom: 1em;
+}
+
+/* ---------- Blockquote ---------- */
+blockquote {
+  font-style: italic;
+  border-left: 4px solid var(--accent-color);
+  padding-left: 1em;
+  margin: 1em 0;
 }
 
 /* ---------- Footer ---------- */
 footer {
+  clear: both;
   text-align: center;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  background-color: var(--accent-color);
-  color: white;
+  font-size: 0.9em;
+  padding: 1em;
+  color: #666;
+  border-top: 1px solid var(--border-color);
+  background-color: #f8f8f8;
 }
 
-/* ---------- Links ---------- */
-a {
-  color: blue;
+/* ---------- Layout for Speaker Pages ---------- */
+aside {
+  float: left;
+  width: 180px;
+  padding: 1em;
+  background-color: #f8f8f8;
+  border-right: 1px solid var(--border-color);
+}
+
+aside h2 {
+  font-size: 1.1em;
+  color: var(--accent-color);
+  margin-bottom: 0.5em;
+}
+
+aside h3 {
+  font-size: 0.95em;
+  color: var(--primary-color);
+  margin-top: 0.5em;
+  margin-bottom: 0.25em;
+}
+
+aside p {
+  margin-bottom: 0.5em;
+}
+
+aside img {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 0.75em;
+}
+
+aside a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+aside a:hover {
   text-decoration: underline;
 }
 
-a:hover {
-  text-decoration: underline;
+/* Ensures layout clears floats */
+main::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* ---------- Misc ---------- */
-blockquote {
-  font-style: italic;
-  margin: 1rem 2rem;
-  color: #444;
-}
-
-.large {
-  font-size: 125%;
-}
-/* ---------- Speaker Page ---------- */
+/* ---------- Speaker Section ---------- */
 .speaker {
-  margin: 1.5rem 0;
-  padding: 1rem;
+  padding: 1em 1.5em;
+  margin-left: 200px; /* Leaves space for sidebar */
 }
 
 .speaker h1 {
   color: var(--accent-color);
+  margin-top: 0;
+  font-size: 1.5em;
 }
 
 .speaker h2 {
   color: #000;
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
 }
 
 .speaker p {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  line-height: 1.5;
 }
 
 .speaker img {
   float: right;
-  width: 100%;
-  min-width: 100px;
+  margin: 0 0 1em 1em;
   max-width: 250px;
-  margin: 0 0 1rem 1rem;
-  border: 3px double var(--accent-color);
-  border-radius: 10px;
+  border: 1px solid var(--border-color);
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--accent-color);
+}
+
+a:hover {
+  text-decoration: underline;
 }
