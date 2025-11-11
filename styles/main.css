@@ -23,7 +23,7 @@ body {
   border: 2px solid var(--accent-color);
 }
 
-/* Reduce spacing slightly */
+/* Basic spacing for text elements */
 h1, h2, h3, p, ul {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
@@ -45,9 +45,7 @@ header {
 
 header img {
   float: left;
-  width: 100%;
-  min-width: 40px;
-  max-width: 80px;
+  width: 80px;
   margin: 0.75em 1em;
   border: 4px double var(--accent-color);
   border-radius: 10px;
@@ -62,7 +60,7 @@ header h3 {
   font-style: italic;
 }
 
-/* ---------- Main content ---------- */
+/* ---------- Layout ---------- */
 main {
   display: flex;
   flex-wrap: wrap;
@@ -79,43 +77,25 @@ section {
   flex-basis: 70%;
 }
 
+/* ---------- Sidebar ---------- */
 aside h2 {
   color: var(--accent-color);
 }
 
 aside img {
   display: block;
-  width: 100%;
-  min-width: 40px;
-  max-width: 75px;
+  width: 75px;
   margin: 0.5rem 0 1rem 0;
   border: 2px double var(--accent-color);
   border-radius: 8px;
 }
 
+/* ---------- Featured Section ---------- */
 section h1 {
   border-top: 2px solid var(--accent-color);
   border-bottom: 2px solid var(--accent-color);
   margin-top: 1.5rem;
   font-size: 1.4rem;
-}
-
-/* ---------- Featured speaker ---------- */
-.featured {
-  border-top: 2px solid var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
-  margin: 1.5rem 0;
-  padding: 1rem 0;
-}
-
-.featured img {
-  float: right;
-  width: 100%;
-  min-width: 100px;
-  max-width: 250px;
-  margin: 0 0 1rem 1rem;
-  border: 3px double var(--accent-color);
-  border-radius: 10px;
 }
 
 /* ---------- Footer ---------- */
@@ -138,7 +118,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* ---------- Misc ---------- */
+/* ---------- Blockquotes ---------- */
 blockquote {
   font-style: italic;
   margin: 1rem 2rem;
@@ -148,6 +128,7 @@ blockquote {
 .large {
   font-size: 125%;
 }
+
 /* ---------- Speaker Page ---------- */
 .speaker {
   margin: 1.5rem 0;
@@ -156,10 +137,14 @@ blockquote {
 
 .speaker h1 {
   color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  padding-bottom: 0.25em;
 }
 
 .speaker h2 {
   color: #000;
+  font-style: italic;
+  margin-top: 0.5em;
 }
 
 .speaker p {
@@ -169,10 +154,15 @@ blockquote {
 
 .speaker img {
   float: right;
-  width: 100%;
-  min-width: 100px;
-  max-width: 250px;
+  width: 250px;
   margin: 0 0 1rem 1rem;
   border: 3px double var(--accent-color);
   border-radius: 10px;
+}
+
+/* ---------- Clear float ---------- */
+footer::before {
+  content: "";
+  display: block;
+  clear: both;
 }
