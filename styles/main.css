@@ -23,6 +23,7 @@ body {
   border: 2px solid var(--accent-color);
 }
 
+/* Reduce spacing slightly */
 h1, h2, h3, p, ul {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
@@ -37,16 +38,15 @@ ul {
 /* ---------- Header ---------- */
 header {
   line-height: 1.2;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   border-bottom: 2px solid var(--accent-color);
   background: linear-gradient(30deg, #f6bb73 0%, #fff 30%, #fff 65%, #f6bb73 100%);
+  overflow: auto;
 }
 
 header img {
   float: left;
-  width: 100%;
-  min-width: 40px;
-  max-width: 80px;
+  width: 80px;
   margin: 0.75em 1em;
   border: 4px double var(--accent-color);
   border-radius: 10px;
@@ -64,29 +64,34 @@ header h3 {
 /* ---------- Main content ---------- */
 main {
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start;
   gap: 1.5rem;
   margin-top: 1rem;
 }
 
 aside {
-  flex-basis: 25%;
-  padding-right: 1rem;
+  width: 200px;
+  margin-right: 1rem;
+  flex-shrink: 0;
 }
 
 section {
-  flex-basis: 70%;
+  flex: 1;
 }
 
 aside h2 {
   color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+aside h3 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 aside img {
   display: block;
-  width: 100%;
-  min-width: 40px;
-  max-width: 75px;
+  width: 75px;
   margin: 0.5rem 0 1rem 0;
   border: 2px double var(--accent-color);
   border-radius: 8px;
@@ -96,6 +101,7 @@ aside img {
 .speaker {
   margin: 1.5rem 0;
   padding: 1rem;
+  line-height: 1.6;
 }
 
 .speaker h1 {
@@ -115,11 +121,12 @@ aside img {
 .speaker p {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  text-align: justify;
 }
 
 .speaker img {
   float: right;
-  width: 220px;
+  width: 240px;
   margin: 0 0 1rem 1rem;
   border: 3px double var(--accent-color);
   border-radius: 10px;
