@@ -1,209 +1,178 @@
-:root{
+:root {
   --accent-color: #800000;
-  --page-bg: #fff;
-  --muted: #f5f5f5;
-  --divider: #bdbdbd;
 }
 
-/* Reset */
-*{box-sizing:border-box;margin:0;padding:0}
+/* ---------- Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-/* Page frame similar to flyer */
-body{
+/* ---------- General page styles ---------- */
+body {
   font-family: "Times New Roman", Times, serif;
-  background: var(--page-bg);
   color: #000;
-  /* set a fixed comfortable width similar to the printed flyer */
-  width: 820px;
-  max-width: 95%;
+  background-color: #fff;
+  width: 80%;
+  max-width: 1024px;
   margin: 0 auto;
-  padding: 16px;
-  line-height:1.5;
-  font-size: calc(0.95rem + 0.15vw);
-  border: 3px solid var(--accent-color); /* outer maroon frame like the flyer */
-  background-clip: padding-box;
+  padding: 2rem;
+  line-height: 1.5;
+  font-size: calc(0.9rem + 0.2vw);
+  border: 2px solid var(--accent-color);
 }
 
-/* small spacing reduce */
-h1,h2,h3,p,ul{padding:0.25em 0}
-
-/* Header (logo left, big title and italic subheading) */
-header{
-  overflow:auto; /* contain floated logo */
-  padding: 14px 12px;
-  border-bottom: 3px solid var(--accent-color);
-  background: linear-gradient(30deg,#f6bb73 0%,#fff 30%,#fff 70%,#f6bb73 100%);
-  margin-bottom: 10px;
+/* Reduce spacing slightly */
+h1, h2, h3, p, ul {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
 }
 
-header img{
-  float:left;
-  width:84px;
-  height:auto;
-  margin-right:12px;
-  border:4px double var(--accent-color);
-  border-radius:8px;
-  display:block;
+ul {
+  margin-left: 2em;
+  list-style-type: disc;
+  padding-left: 1rem;
 }
 
-header h2{
-  font-size:28px; /* prominent */
-  line-height:1;
-  margin-top:4px;
-}
-
-header h3{
-  margin-top:6px;
-  font-size:18px;
-  font-style:italic;
-}
-
-/* Layout: two columns with vertical divider */
-main{
-  display:flex;
-  align-items:flex-start;
-  gap:18px;
-  margin-top:12px;
-}
-
-/* Left sidebar */
-aside{
-  width:200px;           /* narrow left column */
-  background: var(--muted);
-  padding:12px;
-  border-right: 1px solid var(--divider); /* subtle right divider for the column */
-  flex-shrink:0;
-}
-
-/* Sidebar header */
-aside h2{
-  color: var(--accent-color);
-  font-size:1.1rem;
-  margin-bottom:8px;
-}
-
-/* Each speaker listing (h3 + small framed image) */
-aside h3{
-  font-size:1.05rem;
-  margin:10px 0 4px 0;
-  line-height:1.1;
-}
-
-aside h3 a{
-  color: #0a47b7;        /* blue link like screenshot */
-  text-decoration: underline;
-  font-weight:700;
-}
-
-/* small square thumbnails like the flyer */
-aside img{
-  display:block;
-  width:64px;
-  height:64px;
-  object-fit:cover;
-  border:2px double var(--accent-color);
-  border-radius:6px;
-  padding:3px;
-  background:#fff;
-  margin-bottom:10px;
-}
-
-/* Main content column (speaker) */
-section{
-  flex:1;
-  padding-left:18px;
-  /* add a subtle vertical rule near the left of this column to mimic the narrow center line */
-  position:relative;
-}
-
-/* vertical center line (optional thin line) */
-section::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  bottom:0;
-  width:1px;
-  background: var(--divider);
-  opacity:0.6;
-  transform: translateX(-9px); /* move left slightly to sit between columns visually */
-  pointer-events:none;
-}
-
-/* Speaker section styling (instruction required) */
-.speaker{
-  margin:0;
-  padding: 0 12px 12px 28px; /* padding-left gives space from vertical line */
-  line-height:1.6;
-}
-
-/* H1 should use accent color */
-.speaker h1{
-  color: var(--accent-color);
-  font-size:26px;
-  margin-bottom:8px;
-  font-weight:bold;
-  /* top and bottom rules similar to final image */
-  border-top: none;
+/* ---------- Header ---------- */
+header {
+  line-height: 1.2;
+  padding-bottom: 1rem;
   border-bottom: 2px solid var(--accent-color);
-  padding-bottom:6px;
+  background: linear-gradient(30deg, #f6bb73 0%, #fff 30%, #fff 65%, #f6bb73 100%);
 }
 
-/* H2 black */
-.speaker h2{
-  color:#000;
-  font-size:20px;
-  margin-top:12px;
-  margin-bottom:8px;
+header img {
+  float: left;
+  width: 100%;
+  min-width: 40px;
+  max-width: 80px;
+  margin: 0.75em 1em;
+  border: 4px double var(--accent-color);
+  border-radius: 10px;
 }
 
-/* paragraphs: rule from the assignment: top & bottom padding .5em
-   plus justify to match flyer columns */
-.speaker p{
-  padding-top:0.5em;
-  padding-bottom:0.5em;
-  text-align:justify;
-  margin:0;
-  font-size:1rem;
+header h2 {
+  font-size: 170%;
 }
 
-/* Right-floated big image with double maroon border */
-.speaker img{
-  float:right;
-  width:240px;
-  max-width:36%;
-  margin:0 0 12px 12px;
-  border:3px double var(--accent-color);
-  border-radius:8px;
-  display:block;
+header h3 {
+  font-size: 130%;
+  font-style: italic;
 }
 
-/* Footer bar like flyer (dark maroon) */
-footer{
-  margin-top:18px;
-  padding:12px;
-  background: var(--accent-color);
-  color:#fff;
-  text-align:center;
-  font-size:0.95rem;
+/* ---------- Main content ---------- */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
 }
 
-/* Links kept blue & underlined */
-a{ color:#0a47b7; text-decoration:underline; }
-a:hover{ text-decoration:underline; }
-
-/* Blockquote style */
-blockquote{
-  font-style:italic;
-  margin: 12px 18px;
-  color:#444;
+aside {
+  flex-basis: 25%;
+  padding-right: 1rem;
 }
 
-/* small tweaks for very small screens */
-@media (max-width:700px){
-  body{ width:95%; padding:12px }
-  main{ flex-direction:column; }
-  aside{ width:100%; border-right:none; background:transparent; padding:0 0 12px 0; }
-  section::before{ display:none; }
-  .speaker img{ float:none; display:block; margin:10px auto; width:80%; max-width:320px; }
+section {
+  flex-basis: 70%;
+}
+
+aside h2 {
+  color: var(--accent-color);
+}
+
+aside img {
+  display: block;
+  width: 100%;
+  min-width: 40px;
+  max-width: 75px;
+  margin: 0.5rem 0 1rem 0;
+  border: 2px double var(--accent-color);
+  border-radius: 8px;
+}
+
+section h1 {
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+}
+
+/* ---------- Featured speaker ---------- */
+.featured {
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  margin: 1.5rem 0;
+  padding: 1rem 0;
+}
+
+.featured img {
+  float: right;
+  width: 100%;
+  min-width: 100px;
+  max-width: 250px;
+  margin: 0 0 1rem 1rem;
+  border: 3px double var(--accent-color);
+  border-radius: 10px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  background-color: var(--accent-color);
+  color: white;
+}
+
+/* ---------- Links ---------- */
+a {
+  color: blue;
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Misc ---------- */
+blockquote {
+  font-style: italic;
+  margin: 1rem 2rem;
+  color: #444;
+}
+
+.large {
+  font-size: 125%;
+}
+/* ---------- Speaker Page ---------- */
+.speaker {
+  margin: 1.5rem 0;
+  padding: 1rem;
+}
+
+.speaker h1 {
+  color: var(--accent-color);
+}
+
+.speaker h2 {
+  color: #000;
+}
+
+.speaker p {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.speaker img {
+  float: right;
+  width: 100%;
+  min-width: 100px;
+  max-width: 250px;
+  margin: 0 0 1rem 1rem;
+  border: 3px double var(--accent-color);
+  border-radius: 10px;
 }
