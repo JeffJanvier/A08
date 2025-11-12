@@ -20,7 +20,6 @@ body {
   padding: 2rem;
   line-height: 1.5;
   font-size: calc(0.9rem + 0.2vw);
-  border: 2px solid var(--accent-color);
 }
 
 /* Reduce spacing slightly */
@@ -44,7 +43,6 @@ em, i, header h3, blockquote, .speaker h2 {
 header {
   line-height: 1.2;
   padding-bottom: 1rem;
-  border-bottom: 2px solid var(--accent-color);
   background: linear-gradient(30deg, #f6bb73 0%, #fff 30%, #fff 65%, #f6bb73 100%);
 }
 
@@ -114,10 +112,7 @@ aside img {
   padding-bottom: 0.5em;
 }
 
-/* Remove borders around featured if you don't want them — keep as before */
 .featured {
-  border-top: 2px solid var(--accent-color);
-  border-bottom: 2px solid var(--accent-color);
   margin: 1.5rem 0;
   padding: 1rem 0;
 }
@@ -154,7 +149,7 @@ a:hover {
 
 /* ---------- Misc ---------- */
 blockquote {
-  font-style: normal; /* explicitly remove italic here */
+  font-style: normal; 
   margin: 1rem 2rem;
   color: #444;
 }
