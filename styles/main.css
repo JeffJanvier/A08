@@ -22,7 +22,7 @@ body {
   font-size: calc(0.9rem + 0.2vw);
 }
 
-/* Reduce spacing slightly */
+
 h1, h2, h3, p, ul {
   padding-top: 0.25em;
   padding-bottom: 0.25em;
@@ -34,7 +34,7 @@ ul {
   padding-left: 1rem;
 }
 
-/* Ensure no element is displayed in italic */
+
 em, i, header h3, blockquote, .speaker h2 {
   font-style: normal !important;
 }
@@ -60,7 +60,6 @@ header h2 {
   font-size: 170%;
 }
 
-/* header h3 previously italic — force normal */
 header h3 {
   font-size: 130%;
   font-style: normal;
